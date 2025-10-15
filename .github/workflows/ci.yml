@@ -35,7 +35,7 @@ jobs:
 
       # 5️⃣ Security scan with Bandit (code-level)
       - name: Bandit security scan
-        run: bandit -r .
+        run: bandit -r . -ll -ii
 
       # 6️⃣ Run unit tests with coverage
       - name: Run tests with coverage
