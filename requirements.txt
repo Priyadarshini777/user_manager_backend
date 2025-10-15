@@ -191,3 +191,8 @@ pytest==7.4.1
 pytest-cov==4.1.0
 flake8==6.1.0
 bandit==1.7.4
+pywin32==306; sys_platform == "win32"
+numpy>=1.25
+matplotlib>=3.7
+mysql-connector-python>=9.3
+greenlet>=2.1
