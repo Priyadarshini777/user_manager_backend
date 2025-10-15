@@ -15,11 +15,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # 2️⃣ Set up Python
+    # 2️⃣ Set up Python (use 3.11 for compatibility)
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.11'
 
     # 3️⃣ Upgrade pip, setuptools, wheel
     - name: Upgrade pip, setuptools, wheel
@@ -28,7 +28,9 @@ jobs:
 
     # 4️⃣ Install dependencies
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: |
+        pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
 
     # 5️⃣ Lint with Flake8
     - name: Lint code
