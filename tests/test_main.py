@@ -1,12 +1,15 @@
 from fastapi.testclient import TestClient
 from app.main import app
 
+
 client = TestClient(app)
+
 
 def test_root():
     res = client.get("/")
     assert res.status_code == 200
     assert res.json() == {"message": "Welcome to User Manager API!"}
+
 
 def test_create_and_get_user():
     res = client.post("/users", json={"id": 1, "name": "Priya"})
