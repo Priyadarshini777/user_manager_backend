@@ -37,7 +37,7 @@ jobs:
         run: docker build -t user-manager:latest .
 
       - name: Scan Docker image (Trivy)
-        uses: aquasecurity/trivy-action@v0.11.1
+        uses: aquasecurity/trivy-action@v0
         with:
           image-ref: user-manager:latest
           severity: CRITICAL,HIGH
