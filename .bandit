@@ -1,3 +1,3 @@
 [bandit]
-# Skip warning for assert usage in tests
 skips: B101
+exclude: tests
